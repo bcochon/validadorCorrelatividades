@@ -38,8 +38,15 @@ class InscripcionTest {
 
     @Test
     @DisplayName("Inscripción desaprobada compleja")
-    public void revisarInscripcionMalaMultiple() {
+    public void revisarInscripcionMala2() {
         Inscripcion inscripcionMala = new Inscripcion(juan, analisisNumerico);
+        Assertions.assertEquals(false, inscripcionMala.aprobada());
+    }
+
+    @Test
+    @DisplayName("Inscripción múltiple desaprobada")
+    public void revisarInscripcionMalaMultiple() {
+        Inscripcion inscripcionMala = new Inscripcion(juan, algebra, analisisNumerico);
         Assertions.assertEquals(false, inscripcionMala.aprobada());
     }
 }
